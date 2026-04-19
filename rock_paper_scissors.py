@@ -1,4 +1,5 @@
 import random
+import sys
 
 def get_user_choice():
     choice = input("Enter your choice (rock, paper, scissors): ").lower()
@@ -30,4 +31,15 @@ def play_game():
     print(result)
 
 if __name__ == "__main__":
-    play_game()
+    if len(sys.argv) > 1:
+        user_choice = sys.argv[1].lower()
+        if user_choice not in ['rock', 'paper', 'scissors']:
+            print("Invalid choice. Please choose rock, paper, or scissors.")
+            sys.exit(1)
+        computer_choice = get_computer_choice()
+        print(f"You chose: {user_choice}")
+        print(f"Computer chose: {computer_choice}")
+        result = determine_winner(user_choice, computer_choice)
+        print(result)
+    else:
+        play_game()
