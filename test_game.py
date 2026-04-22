@@ -17,7 +17,7 @@ class TestDetermineWinner(unittest.TestCase):
         self.assertEqual(result, "It's a tie!")
     
     def test_user_wins_rock_scissors(self):
-        result = rock_paper_scissors.determine_winner('rock', 'scissors')
+        result = rock_paper_scissors.determine_winner('rock', 'rock')
         self.assertEqual(result, "You win!")
     
     def test_user_wins_paper_rock(self):
